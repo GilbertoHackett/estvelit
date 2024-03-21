@@ -1,0 +1,44 @@
+{
+  "name": "estvelit",
+  "main": "./src/utils/batched-send.js",
+  "version": "1.0.0",
+  "description": "Collection of bots that call contract action callbacks.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GilbertoHackett/estvelit.git"
+  },
+  "author": "GailJones",
+  "license": "MIT",
+  "scripts": {
+    "prettify": "kathari prettify",
+    "lint": "kathari lint:js --no-root",
+    "test": "echo \"\"",
+    "cz": "kathari cz",
+    "start": "env-cmd ./.env.staging node ./src/index.js",
+    "start:production": "env-cmd ./.env.production node ./src/index.js"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "kathari precommit",
+      "commit-msg": "kathari commitmsg"
+    }
+  },
+  "devDependencies": {
+    "@kleros/kathari": "^0.20.0",
+    "delay": "^4.1.0",
+    "env-cmd": "^8.0.2",
+    "standard-version": "^4.4.0"
+  },
+  "peerDependencies": {
+    "web3": "^1.0.0-beta.46"
+  },
+  "dependencies": {
+    "function-batch": "^1.1.2"
+  },
+  "homepage": "https://github.com/GilbertoHackett/estvelit.git"
+}
